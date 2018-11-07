@@ -1,0 +1,153 @@
+% ----------------------- TODO ---------------------------
+%Template 
+\documentclass[a4paper]{scrartcl}
+\usepackage[utf8]{inputenc}
+%\usepackage[ngerman]{babel}
+\usepackage{geometry,forloop,fancyhdr,fancybox,lastpage, hyperref}
+\usepackage{listings}
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+\geometry{a4paper,left=3cm, right=3cm, top=3cm, bottom=3cm}
+% Diese Daten müssen pro Blatt angepasst werden:
+\newcommand{\NUMBER}{4}
+\newcommand{\EXERCISES}{3}
+% Diese Daten müssen einmalig pro Vorlesung angepasst werden:
+\newcommand{\COURSE}{Chip Design}
+\newcommand{\TUTOR}{Julia Grosse}
+\newcommand{\STUDENTA}{Stefan Wezel}
+\newcommand{\STUDENTB}{Lukas Günthner}
+%\newcommand{\STUDENTC}{Gwent Krause}
+\newcommand{\DEADLINE}{\date}
+% ----------------------- TODO ---------------------------
+
+
+
+%Math
+\usepackage{amsmath,amssymb,tabularx}
+
+%Figures
+\usepackage{graphicx,tikz,color,float}
+\graphicspath{ {home/stefan/picures/} }
+\usetikzlibrary{shapes,trees}
+
+%Algorithms
+\usepackage[ruled,linesnumbered]{algorithm2e}
+
+%Kopf- und Fußzeile
+\pagestyle {fancy}
+\fancyhead[L]{Tutor: \TUTOR}
+\fancyhead[C]{\COURSE}
+\fancyhead[R]{\today}
+
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{Seite \thepage}
+
+%Formatierung der Überschrift, hier nichts ändern
+\def\header#1#2{
+	\begin{center}
+		{\Large\bf Übungsblatt #1}\\
+		{(Abgabetermin #2)}
+	\end{center}
+}
+
+%Definition der Punktetabelle, hier nichts ändern
+\newcounter{punktelistectr}
+\newcounter{punkte}
+\newcommand{\punkteliste}[2]{%
+	\setcounter{punkte}{#2}%
+	\addtocounter{punkte}{-#1}%
+	\stepcounter{punkte}%<-- also punkte = m-n+1 = Anzahl Spalten[1]
+	\begin{center}%
+		\begin{tabularx}{\linewidth}[]{@{}*{\thepunkte}{>{\centering\arraybackslash} X|}@{}>{\centering\arraybackslash}X}
+			\forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+			{%
+				\thepunktelistectr &
+			}
+			#2 &  $\Sigma$ \\
+			\hline
+			\forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+			{%
+				&
+			} &\\
+			\forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+			{%
+				&
+			} &\\
+		\end{tabularx}
+	\end{center}
+}
+
+\begin{document}
+	
+	\begin{tabularx}{\linewidth}{m{0.2 \linewidth}X}
+		\begin{minipage}{\linewidth}
+			\STUDENTA\\
+			\STUDENTB\\
+			%\STUDENTC
+		\end{minipage} & \begin{minipage}{\linewidth}
+			\punkteliste{1}{\EXERCISES}
+		\end{minipage}\\
+	\end{tabularx}
+	
+	%\header{Nr. \NUMBER}{\DEADLINE}
+	
+	% ----------------------- TODO ---------------------------
+	% Hier werden die Aufgaben/Lösungen eingetragen:
+	
+	
+
+\section*{Augabe 1:}
+\subsection*{$I)$}
+Die per Wafer $= D \cdot \pi ( \frac{D}{4S} - \frac{1}{\sqrt{2S}})$, mit $D$ wafer diameter und $S$ die-size. Formel entonmmen aus \href{https://anysilicon.com/die-per-wafer-formula-free-calculators/}{https://anysilicon.com/die-per-wafer-formula-free-calculators/}.  \\
+$\Rightarrow$ Die per Wafer $ = 150 \cdot \pi (\frac{150}{400} - \frac{1}{\sqrt{200}}) \approx 143$
+
+\subsection*{$II)$}
+$Y = 0,45$\\
+$Y_w = e^{-\sqrt{AD}} \Leftrightarrow -\ln (Y_w) = \sqrt{AD} \Leftrightarrow D = \frac{(-\ln(Y_w))^2}{A} \Rightarrow D = \frac{(-\ln(0,35))^2}{\pi \cdot 1^2} \approx 35,08 \%$
+
+\subsection*{$III)$}
+$Y_w = e^{- \sqrt{1,5 \cdot 0,3508}} \approx 0,4841 \Rightarrow 48,41\%$\\
+"gute IC's" $= 0,4841 \cdot 90 = 43$\\
+Dies per Wafer $= 150 ( \frac{150}{4 \cdot 150} - \frac{1}{\sqrt{2 \cdot 150}}) \pi \approx 90$\\
+
+\subsection*{$IV)$}
+\begin{itemize}
+	\item Typ A: $K_{IC} = \frac{K_{Scheibe}}{N_{gut}} = \frac{1000}{143 \cdot 0,3508} \approx 19,93$ Euro.
+	\item Typ B: $K_{IC} = \frac{K_{Scheibe}}{N_{gut}} = \frac{1000}{43} \approx 23,26$ Euro.
+\end{itemize}
+
+\section*{Aufgabe 2}
+\subsection*{$I)$}
+Ja, durch kleiner IC's wird beispielsweise die Anzahl defekter IC's durch Punktdefekte auf dem Wafer verringert.
+
+\subsection*{$II)$}
+$\frac{K_{new}}{K_{old}} = \frac{A_{new}}{A_{old}} \cdot e^{\sqrt{A_{new} \cdot D} - \sqrt{A_{old} \cdot D}}$\\
+$\Rightarrow = \frac{1}{2} \cdot e^{\sqrt{1} - \sqrt{2}} \approx 0,33 = \frac{1}{3}$\\
+$\Rightarrow$ Durch halbierung der IC Fläche $A$, lassen sich die Kosten auf ein Drittel der ursprünglichen Kosten reduzieren.
+
+
+\section*{Aufgabe 3}
+\subsection*{$I)$}
+$Y_{ges} = 0,9 \cdot 0,82 \cdot 0,95 = 0,7011$\\
+$\text{Prozesskosten}_{ges} = 1200$\\
+$\text{Waferkosten}_{ges} = 1200 + 200 = 1400$\\
+$\Rightarrow K_{IC} = \frac{1400}{500 \cdot 0,7011} \approx 4$ Euro.
+
+
+
+\end{document}
