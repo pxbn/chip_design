@@ -136,37 +136,27 @@ $
 
 
 \subsection*{(b)}
-Wir nutzen die "ideale Diode" aus Folie 38.
+Wir nutzen die "ideale Diode" aus Folie 38 um den theoretisch möglichen Strom $I_D$ und die Stromstärke der Schaltung zu berechnen.\\
+Theoretisch möglicher Strom:\\
+$I_D = I_{SS} \cdot ( e^{\frac{U_D}{U_T}} - 1 ) = 7,2 \cdot 10^{-11}A (e^{\frac{0,6V}{26 \cdot 10^{-3}V}}) = 0,75772A$\\
+~\\
 $
-R_D = \frac { 0.6  V } { \left( 7.2 \times 10 ^ { - 11 } A \right) \cdot \left( e ^ { \frac { 0.6 V } { 26 \cdot 10 ^ { - 3 } V}  } - 1 \right) }
-$
+R_D = \frac{U_D}{I_D} = \frac{U_D}{I_{SS} (e^{U_D/ U_T} - 1) } = \frac { 0.6  V } { \left( 7.2 \cdot 10 ^ { - 11 } A \right) \cdot \left( e ^ { \frac { 0.6 V } { 26 \cdot 10 ^ { - 3 } V}  } - 1 \right) } = \frac{0,6V}{0,75772A} 0,791843 \Omega
+$\\
+Damit können wir nun die Stromstärke der Schaltung berechenen (Äquivalent zu $a)$).\\
+$I = \frac{U_0}{R_{ges}} = \frac{5V}{1000\Omega + 0,791843 \Omega} = 5 \cdot 10^{-3}A$
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\subsection*{(c)}
+$u_c (t) = U_0(1 - e ^{- \frac{t}{RC}})$\\
+$i(t) = \frac{U_0}{R} \cdot e^{- \frac{t}{RC}}$\\
+~\\
+$\Rightarrow u_c(0.1) = 5V (1 - e ^{ - \frac{0,1}{1000 \Omega \cdot 10^{-4}F }}) = 0,0018394V$\\
+$\Rightarrow i(0,1) = \frac{5V}{1000\Omega} (e^{-\frac{0,1}{1000\Omega \cdot 10^{-4}F}} ) \approx 3,1606A$
 
 
 \section*{Aufgabe 2}
-Den Prozess des Anpassens eines logischen Designs eines Schaltungsentwurfs mittels physikalisch gemessenen Werten um eine bessere (realistischere) Simulation zu erzeugen.
+Den Prozess des Anpassens eines logischen Designs eines Schaltungsentwurfs mittels eigenen physikalisch gemessenen Werten um eine bessere (realistischere) Simulation zu erzeugen.
 
 
 \end{document}
