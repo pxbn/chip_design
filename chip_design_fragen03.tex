@@ -1,0 +1,181 @@
+ % ----------------------- TODO ---------------------------
+%Template 
+\documentclass[a4paper]{scrartcl}
+\usepackage[utf8]{inputenc}
+%\usepackage[ngerman]{babel}
+\usepackage{geometry,forloop,fancyhdr,fancybox,lastpage}
+\usepackage{listings}
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+\geometry{a4paper,left=3cm, right=3cm, top=3cm, bottom=3cm}
+% Diese Daten müssen pro Blatt angepasst werden:
+\newcommand{\NUMBER}{1}
+\newcommand{\EXERCISES}{11}
+% Diese Daten müssen einmalig pro Vorlesung angepasst werden:
+\newcommand{\COURSE}{Chip Design}
+%\newcommand{\TUTOR}{Benjamin Coban}
+\newcommand{\STUDENTA}{Stefan Wezel}
+\newcommand{\STUDENTB}{Lukas Günthner}
+%\newcommand{\STUDENTC}{Gwent Krause}
+\newcommand{\DEADLINE}{\date}
+% ----------------------- TODO ---------------------------
+
+
+
+%Math
+\usepackage{amsmath,amssymb,tabularx}
+
+%Figures
+\usepackage{graphicx,tikz,color,float}
+\graphicspath{ {home/stefan/picures/} }
+\usetikzlibrary{shapes,trees}
+
+%Algorithms
+\usepackage[ruled,linesnumbered]{algorithm2e}
+
+%Kopf- und Fußzeile
+\pagestyle {fancy}
+%\fancyhead[L]{Tutor: \TUTOR}
+\fancyhead[C]{\COURSE}
+\fancyhead[R]{\today}
+
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{Seite \thepage}
+
+%Formatierung der Überschrift, hier nichts ändern
+\def\header#1#2{
+	\begin{center}
+		{\Large\bf Übungsblatt #1}\\
+		{(Abgabetermin #2)}
+	\end{center}
+}
+
+%Definition der Punktetabelle, hier nichts ändern
+\newcounter{punktelistectr}
+\newcounter{punkte}
+\newcommand{\punkteliste}[2]{%
+	\setcounter{punkte}{#2}%
+	\addtocounter{punkte}{-#1}%
+	\stepcounter{punkte}%<-- also punkte = m-n+1 = Anzahl Spalten[1]
+	\begin{center}%
+		\begin{tabularx}{\linewidth}[]{@{}*{\thepunkte}{>{\centering\arraybackslash} X|}@{}>{\centering\arraybackslash}X}
+			\forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+			{%
+				\thepunktelistectr &
+			}
+			#2 &  $\Sigma$ \\
+			\hline
+			\forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+			{%
+				&
+			} &\\
+			\forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+			{%
+				&
+			} &\\
+		\end{tabularx}
+	\end{center}
+}
+
+\begin{document}
+	
+	\begin{tabularx}{\linewidth}{m{0.2 \linewidth}X}
+		\begin{minipage}{\linewidth}
+			\STUDENTA\\
+			\STUDENTB\\
+			%\STUDENTC
+		\end{minipage} & \begin{minipage}{\linewidth}
+			\punkteliste{1}{\EXERCISES}
+		\end{minipage}\\
+	\end{tabularx}
+	
+	%\header{Nr. \NUMBER}{\DEADLINE}
+	
+	% ----------------------- TODO ---------------------------
+	% Hier werden die Aufgaben/Lösungen eingetragen:
+	
+	
+
+\section*{Frage 1}
+Da es sehr aufwändig und teuer ist, einen IC zu bauen, ist es wichtig Fehler im Design vor der tatsächlichen Produktion aufzudecken.\\
+Eine wichtige Methode um solche Fehler zu vermeiden ist das Simulieren der Schaltung.
+
+
+\section*{Frage 2}
+Beim Design Centering im Chipdesign geht es darum die Ausbeute maximieren. Dafür werden Schwächen im Design aufgesucht, und diese als Basis für Nacharbeit im Entwurf genutzt.\\
+Um dies zu realisieren werden während der Testphase bspw. zwei Test-Parameter verändert und dann ein Bereich festgelegt, in dem der Entwurf gut funktioniert und nicht ausfällt. Die Überarbeitung des Entwurfs sollte dann komplett (im Zentrum )innerhalb des Bereichs liegen, wo der ursprüngliche Entwurf unter beiden Test-Parametern gut funktioniert hat.
+
+
+
+
+\section*{Frage 3}
+Digitalrechner arbeiten mit diskreten Zeiten und Werten, da nur diese tatsächlich digital repräsentiert werden können.\\
+Kommen kontinuierliche Werte zum Einsatz, kann dies zu Problemen wie Rundungsfehlern oder Überläufen führen.\\
+%TODO
+
+
+
+\section*{Frage 4}
+Ein reales Bauelement wäre bspw. ein Kondensator. Das ideale Gegenstück dazu wäre dann die Kapazität. Mithilfe der Kapazität lassen sich zwar gut Werte innerhalb eines Entwurfs berechnen, allerdings entsprechen diese nicht unbedingt der Realität. Allerdings kann ein reales Bauteil durch verschiedene ideale Bauteile modelliert werden.
+
+
+
+
+\section*{Frage 5}
+Beim Kleinsignalmodell handelt es sich um ein "linearisiertes" Modell einer nicht-linearen Übertragsfunktion der Abhängigkeit von Ausgangssignalen.\\
+Dieses Modell ist dann aber nur gültig an einem bestimmten Arbeitspunkt. Auch ist dies nur möglich, wenn die nicht-linearität lediglich schwach ausgeprägt ist.\\
+Das Großsignal Verhalten beschreibt dann die eigentliche nicht-lineare Übertragsfunktion.
+
+
+\section*{Frage 6}
+Wenn die Übertragsfunktion nur schwach-nicht-linear ist kann die Wechselstrom-Kleinsignalanalyse durchgeführt werden. Dazu wird versucht das Übertragsverhalten zu linearisieren. Dafür wählen wir einen bestimmten Betriebspunkt (Arbeitspunkt) und linearisieren die Funktion an diesem Punkt, leiten sie also ab(?) and dieser Stelle. Dann erhalten wir ein linearisiertes Modell am gewählten Arbeitspunkt.
+
+
+
+
+\section*{Frage 7}
+Das Ziel ist es das Verhalten einer Schaltung in einem vorgegebenen Zeitbereich zu testen.\\
+Zunächst müssen wir dafür einen Anfangspunkt berechen. Dies geschieht durch eine DC-Analyse. Dazu wird das Verhalten einer Schaltung unter Verwendung einer beliebigen Eingangsfunktion oder mehreren beobachtet.\\
+Anschließend soll das Verhalten des Großsignals im vorgegebenen Zeitbereich berechnet werden. Dies geschieht durch schrittweises Integrieren des Gleichungssystems aus Differentialgleichungen. (?)%TODO
+Hierbei wird die Funktion in jedem Zeitschritt linearisiert.\\
+Es ergibt sich das Verhalten der gegebenen Funktionen über den definierten Zeitraum.
+
+
+\section*{Frage 8}
+Die Knotenspannungsanalyse wird genutzt um Schaltungen zu Analysieren. Das Ergebnis ist ein Gleichungsystem, das jede Spannung an jedem Knoten in der Schaltung enthält.\\
+Allerdings können hier keine idealen Spannungsquellen verwendet werden.\\
+Hierfür kann die modifiezierte Knotenspannungsanalyse verwendet werden.\\
+Das Ergebnis Gleichungssystem dieser Methode enthält eine Spalte mehr, welche aus unbekannten Variablen besteht. Außerdem eine weitere Zeile, welche die den Spannungswert der Spanungsquelle der Schaltung enthält.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
