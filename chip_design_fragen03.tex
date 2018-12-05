@@ -164,7 +164,29 @@ Das Ergebnis Gleichungssystem dieser Methode enthält eine Spalte mehr, welche a
 
 
 
+\section*{Frage 9}
+\begin{itemize}
+	\item Vorwärts-Euler-Integration: \\
+	Es handelt sich um ein explizites Verfahren erster Ordnung. Strom am Anfang des gegebenen Zeitschritts wird als konstant angenommen. Der Integrationsfehler lässt sich durch eine Taylor Entwicklung bestimmen.
+	 
+	\item Rückwärts-Euler-Integration: \\
+	Der Fehlerbetrag ist gleich wie bei der Vorwärts-Euler-Integration. Hier wird aber der Strom am Ende des Zeitschritts als konstant angenommen. Es handelt sich daher um ein implizites Verfahren erster Ordnung.
+	
+	\item Trapezverfahren:\\
+	Hier wird der Strom während des gegebenen Zeitschritts durch eine Gerade angenähert. Um die Gerade zu bestimmen verwendet man den Mittelwert des Stroms am Anfang und Ende des Zeitschritts. Es handelt sich also um ein implizites Verfahren zweiter Ordnung.
+		
+\end{itemize}
 
+
+
+\section*{Frage 10}
+Eine Schaltung lässt sich als ein Gleichungssystem aus Differentialgleichungen ($\rightarrow$ DGL) beschreiben. (?)
+
+
+\section*{Frage 11}
+Bei einer einer Diode kann es sein, dass sie im Sperrbereich einen extrem hohen Leckwiderstand aufweist. Da wir in digitalen Modellen aber nur einen begrenztenzulässigen Zahlenbereich, kann dies zu sogenannten Konvergenzproblemen führen.\\
+Um ein realistisches und hinreichend genau berechnbares Modell zu finden, können wir parallel zur Diode und nach ihr einen Widerstand einbauen.
+%TODO nicht sicher ob wirklich diese Art von Problemen gemeint ist.
 
 
 
