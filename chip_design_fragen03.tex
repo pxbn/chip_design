@@ -114,12 +114,15 @@
 \section*{Frage 1}
 Da es sehr aufwändig und teuer ist, einen IC zu bauen, ist es wichtig Fehler im Design vor der tatsächlichen Produktion aufzudecken.\\
 Eine wichtige Methode um solche Fehler zu vermeiden ist das Simulieren der Schaltung.
+~\\
+~\\
 
 
 \section*{Frage 2}
 Beim Design Centering im Chipdesign geht es darum die Ausbeute maximieren. Dafür werden Schwächen im Design aufgesucht, und diese als Basis für Nacharbeit im Entwurf genutzt.\\
 Um dies zu realisieren werden während der Testphase bspw. zwei Test-Parameter verändert und dann ein Bereich festgelegt, in dem der Entwurf gut funktioniert und nicht ausfällt. Die Überarbeitung des Entwurfs sollte dann komplett (im Zentrum )innerhalb des Bereichs liegen, wo der ursprüngliche Entwurf unter beiden Test-Parametern gut funktioniert hat.
-
+~\\
+~\\
 
 
 
@@ -127,12 +130,14 @@ Um dies zu realisieren werden während der Testphase bspw. zwei Test-Parameter v
 Digitalrechner arbeiten mit diskreten Zeiten und Werten, da nur diese tatsächlich digital repräsentiert werden können.\\
 Kommen kontinuierliche Werte zum Einsatz, kann dies zu Problemen wie Rundungsfehlern oder Überläufen führen.\\
 %TODO
-
+~\\
+~\\
 
 
 \section*{Frage 4}
-Ein reales Bauelement wäre bspw. ein Kondensator. Das ideale Gegenstück dazu wäre dann die Kapazität. Mithilfe der Kapazität lassen sich zwar gut Werte innerhalb eines Entwurfs berechnen, allerdings entsprechen diese nicht unbedingt der Realität. Allerdings kann ein reales Bauteil durch verschiedene ideale Bauteile modelliert werden.
-
+Ein reales Bauelement wäre bspw. ein Kondensator. Das ideale Gegenstück dazu wäre dann die Kapazität. Mithilfe der Kapazität lassen sich zwar gut Werte innerhalb eines Entwurfs berechnen, allerdings entsprechen diese nicht unbedingt der Realität (fehlender Leckstrom, fehlende Induktivität sowie fehlender Widerstand der Drähte). Allerdings kann ein reales Bauteil durch verschiedene ideale Bauteile modelliert werden.
+~\\
+~\\
 
 
 
@@ -140,20 +145,24 @@ Ein reales Bauelement wäre bspw. ein Kondensator. Das ideale Gegenstück dazu w
 Beim Kleinsignalmodell handelt es sich um ein "linearisiertes" Modell einer nicht-linearen Übertragsfunktion der Abhängigkeit von Ausgangssignalen.\\
 Dieses Modell ist dann aber nur gültig an einem bestimmten Arbeitspunkt. Auch ist dies nur möglich, wenn die nicht-linearität lediglich schwach ausgeprägt ist.\\
 Das Großsignal Verhalten beschreibt dann die eigentliche nicht-lineare Übertragsfunktion.
-
+~\\
+~\\
 
 \section*{Frage 6}
-Wenn die Übertragsfunktion nur schwach-nicht-linear ist kann die Wechselstrom-Kleinsignalanalyse durchgeführt werden. Dazu wird versucht das Übertragsverhalten zu linearisieren. Dafür wählen wir einen bestimmten Betriebspunkt (Arbeitspunkt) und linearisieren die Funktion an diesem Punkt, leiten sie also ab(?) and dieser Stelle. Dann erhalten wir ein linearisiertes Modell am gewählten Arbeitspunkt.
-
+Wenn die Übertragsfunktion nur schwach-nicht-linear ist kann die Wechselstrom-Kleinsignalanalyse durchgeführt werden. Dazu wird versucht das Übertragsverhalten zu linearisieren. Dafür wählen wir einen bestimmten Betriebspunkt (Arbeitspunkt) und linearisieren die Funktion an diesem Punkt mit numerischeR Integration. Dann erhalten wir ein linearisiertes Modell am gewählten Arbeitspunkt.
+~\\
+~\\
 
 
 
 \section*{Frage 7}
 Das Ziel ist es das Verhalten einer Schaltung in einem vorgegebenen Zeitbereich zu testen.\\
 Zunächst müssen wir dafür einen Anfangspunkt berechen. Dies geschieht durch eine DC-Analyse. Dazu wird das Verhalten einer Schaltung unter Verwendung einer beliebigen Eingangsfunktion oder mehreren beobachtet.\\
-Anschließend soll das Verhalten des Großsignals im vorgegebenen Zeitbereich berechnet werden. Dies geschieht durch schrittweises Integrieren des Gleichungssystems aus Differentialgleichungen. (?)%TODO
+Anschhalten des Großsignals im vorgegebenen Zeitbereich berechnet werden. Dies geschieht durch schrittwließend soll das Vereises Integrieren des Gleichungssystems aus Differentialgleichungen.
 Hierbei wird die Funktion in jedem Zeitschritt linearisiert.\\
 Es ergibt sich das Verhalten der gegebenen Funktionen über den definierten Zeitraum.
+~\\
+~\\
 
 
 \section*{Frage 8}
@@ -161,6 +170,8 @@ Die Knotenspannungsanalyse wird genutzt um Schaltungen zu Analysieren. Das Ergeb
 Allerdings können hier keine idealen Spannungsquellen verwendet werden.\\
 Hierfür kann die modifiezierte Knotenspannungsanalyse verwendet werden.\\
 Das Ergebnis Gleichungssystem dieser Methode enthält eine Spalte mehr, welche aus unbekannten Variablen besteht. Außerdem eine weitere Zeile, welche die den Spannungswert der Spanungsquelle der Schaltung enthält.
+~\\
+~\\
 
 
 
@@ -176,17 +187,23 @@ Das Ergebnis Gleichungssystem dieser Methode enthält eine Spalte mehr, welche a
 	Hier wird der Strom während des gegebenen Zeitschritts durch eine Gerade angenähert. Um die Gerade zu bestimmen verwendet man den Mittelwert des Stroms am Anfang und Ende des Zeitschritts. Es handelt sich also um ein implizites Verfahren zweiter Ordnung.
 		
 \end{itemize}
+~\\
+~\\
 
 
 
 \section*{Frage 10}
-Eine Schaltung lässt sich als ein Gleichungssystem aus Differentialgleichungen ($\rightarrow$ DGL) beschreiben. (?)
+Eine Schaltung lässt sich als ein Gleichungssystem aus Differentialgleichungen ($\rightarrow$ DGL) beschreiben.
+~\\
+~\\
 
 
 \section*{Frage 11}
-Bei einer einer Diode kann es sein, dass sie im Sperrbereich einen extrem hohen Leckwiderstand aufweist. Da wir in digitalen Modellen aber nur einen begrenztenzulässigen Zahlenbereich, kann dies zu sogenannten Konvergenzproblemen führen.\\
-Um ein realistisches und hinreichend genau berechnbares Modell zu finden, können wir parallel zur Diode und nach ihr einen Widerstand einbauen.
-%TODO nicht sicher ob wirklich diese Art von Problemen gemeint ist.
+Bei einer einer Diode kann es sein, dass sie im Sperrbereich einen extrem hohen Leckwiderstand aufweist. Da wir in digitalen Modellen aber nur mit einem begrenztenzulässigen Zahlenbereich arbeiten, kann dies zu sogenannten Konvergenzproblemen führen.\\
+Um ein realistisches und hinreichend genau berechnbares Modell zu finden, können wir parallel zur Diode und nach ihr einen Widerstand einbauen um so das reale Bauelement exakter zu simulieren.
+~\\
+~\\
+
 
 
 
