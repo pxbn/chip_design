@@ -24,7 +24,7 @@
 \geometry{a4paper,left=3cm, right=3cm, top=3cm, bottom=3cm}
 % Diese Daten müssen pro Blatt angepasst werden:
 \newcommand{\NUMBER}{1}
-\newcommand{\EXERCISES}{18}
+\newcommand{\EXERCISES}{10}
 % Diese Daten müssen einmalig pro Vorlesung angepasst werden:
 \newcommand{\COURSE}{Chip Design}
 %\newcommand{\TUTOR}{Benjamin Coban}
@@ -121,16 +121,16 @@ Es wird CMOS bevorzugt, da CMOS einen geringeren Energieverbrauch hat und es kau
 ~\\
 \section*{Frage 3}
 $P = \frac{1}{2} \cdot C \cdot V_{dd}^2 \cdot f_{eff} + P_{Leck}$\\
-~\\
+~\\x
 mit $P = \text{ Verlustleistung}$, $C = \text{ Kapazität}$, $V_{dd} = \text{ Versorgungsspannung}$, $f_{eff} = \text{ Bit-Wechsel-Rate}$ und $P_{Leck} = \text{ Leistung des Leckstroms}$.
 ~\\
 ~\\
 \section*{Frage 4}
-
+Die High- oder Low-Ausgangsspannung ist nicht vom Verhältnis der Treiberstärken der Pull-Up oder Pull-Down Transistoren abhängig. Deshalb ist die Ausgansspannung auch nicht von der Streuung der Tranistorparameter abhängig solange der jeweilige Transistor hinreichend gesperrt ist und bleibt. Es ist jedoch zu beachten, dass es keine zu hohe Leckströme gibt und keine exzessive Verschiebung der Schwellspannung.
 ~\\
 ~\\
 \section*{Frage 5}
-
+Es werden grundsätzlich n- und p-Kanaltranistoren paarweise verwendet. Entweder das n-Netz oder das p-Netz ist eingeschalten, niemals beide gleichzeitig (abgesehen im Schaltvorgang). Desweiteren fließt kein Dauerstrom abgesehen von Leckströmen. Zuletzt werden keine dynamischen Schaltungen verwendet, das heißt die minimale Taktfrequenz ist $f_{Tmin} = 0 Hz$.
 ~\\
 ~\\
 \section*{Frage 6}
