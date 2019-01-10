@@ -121,7 +121,7 @@ Es wird CMOS bevorzugt, da CMOS einen geringeren Energieverbrauch hat und es kau
 ~\\
 \section*{Frage 3}
 $P = \frac{1}{2} \cdot C \cdot V_{dd}^2 \cdot f_{eff} + P_{Leck}$\\
-~\\x
+~\\
 mit $P = \text{ Verlustleistung}$, $C = \text{ Kapazität}$, $V_{dd} = \text{ Versorgungsspannung}$, $f_{eff} = \text{ Bit-Wechsel-Rate}$ und $P_{Leck} = \text{ Leistung des Leckstroms}$.
 ~\\
 ~\\
@@ -142,7 +142,8 @@ Nein, da das Pull-Up Netz gegen die Versorgungsspannung geschalten ist und N-MOS
 ~\\
 ~\\
 \section*{Frage 8}
-
+Wenn die Komplexität erhöht wird, bedeutet dies für die Fertigung, dass sie mehr Gatter auf einem Chip unterbringen muss. Dafür gibt es unterschiedliche Möglichkeiten. Prinzipiell spielt Platz dabei eine große Rolle. Es müssen möglichst viele Gatter auf möglichst wenig Platz untergebracht werden.\\
+Für die Fertigung kann es dabei hilfreich sein, sich nicht komplett auf automatische Verfahren zu verlassen sondern zumindest Teilweise die Schaltpläne von Hand anfertigen zu lassen. Auf diese Weise lässt sich Platz sparen, und es kann die Komplexität erhöht werden, ohne mehr Platz zu verbrauchen.
 ~\\
 ~\\
 \section*{Frage 9}
@@ -152,6 +153,15 @@ Nein, da das Pull-Up Netz gegen die Versorgungsspannung geschalten ist und N-MOS
 	\item $p_3$: Hier ist die Schwellspannung des Inverters, $U_{in} = U_{out}$.
 	\item $p_4$: Hier beginnt die Noise Margin Zone für den logischen high outpu.
 	\item $p_5$: An diesem Punkt ist das Eingangssignal logisch high und das Ausgangssignal $U_{out} = 0V$
+\end{itemize}
+
+Die fünf charakteristischen Abschnitte sind: 
+\begin{itemize}
+	\item 1: Die Spannung, die am Inverter anliegt ist $0V$. n-mos befindet sich im Cut-Off- und p-mos im linearen Bereich. Der Output ist $V_{DD}$.
+	\item 2: p-mos befindet sich weiterhin im linearen Bereich und n-mos nun im Sättigungsbereich.
+	\item 3: Wir sind nun in der Mitte der Übertragungskurve. Sowohl p- als auch n-mos befinden sich nun im Sättigungsbereich.
+	\item 4: p-mos befindet sich noch im Sättigungsbereich und n-mos im linearen.
+	\item 5: Der p-mos befindet sich im Cut-Off Bereich und n-mos im linearen Bereich. Der Output $0V$.
 \end{itemize}
 ~\\
 ~\\
