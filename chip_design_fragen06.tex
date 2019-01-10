@@ -146,11 +146,21 @@ Nein, da das Pull-Up Netz gegen die Versorgungsspannung geschalten ist und N-MOS
 ~\\
 ~\\
 \section*{Frage 9}
-
+\begin{itemize}
+	\item $p_1$: An diesem Punkt ist das Einganssignal $U_{in} = 0V$ und das Ausganssignal $U_{out}$ logisch high.
+	\item $p_2$: Hier endet die Noise Margin Zone für den logischen low output.
+	\item $p_3$: Hier ist die Schwellspannung des Inverters, $U_{in} = U_{out}$.
+	\item $p_4$: Hier beginnt die Noise Margin Zone für den logischen high outpu.
+	\item $p_5$: An diesem Punkt ist das Eingangssignal logisch high und das Ausgangssignal $U_{out} = 0V$
+\end{itemize}
 ~\\
 ~\\
 \section*{Frage 10}
-
+Die Noise Marin ist die maximale Summe aller elektrischen Störungen, die dem Signal überlagert sein dürfen, ohne die Funktion zu beeinträchtigen (Quelle: Skript 6-16).
+~\\
+Es wird meistens die Punkte an denen die Steigung der VTC $= -1$ ist.
+~\\
+Von der Kanallänge, da diese extrem klein ist und demnach auch kleine Veränderungen starke Auswirkungen auf die Übertragungskennlinie des Transistors haben und die Form der Übertragungskennline zu den Noise Margins führt.
 ~\\
 ~\\
 \end{document}
