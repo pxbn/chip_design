@@ -137,19 +137,22 @@ Nein. Wie aus Frage zwei zu entnehmen beschränkt man sich auf drei bis fünf Lo
 ~\\
 ~\\
 \section*{Frage 6}
-
+Sizing ist die individuelle Dimensionierung der Weiten aller Transistoren in Logik-Bausteinen. Da die Längen Technologie-bedingt minimal sind, können nur die Weiten der Transistoren angepasst werden. Statisches sizing wird verwendet um die VTC's aller Eingänge aller Bausteine möglichst gleich eines Referenzinverters zu gestalten, dies hat den Vorteil, dass alle Eingänge aller Bausteine die gleichen Störempfindlichkeitsdaten haben (Nois-Margin Daten).\\
+Auf der anderen Seite gibt es noch dynamisches Sizing. Hier wird etwas Stör-Unempfindlichkeit zugunsten minimaler Verzögerungszeit geopfert, also die elektrische Kapazität am Ausgang minimal wird.
 ~\\
 ~\\
 \section*{Frage 7}
-
+Die Beta-Ratio ist das Verhältnis der Größen, die die Leitfähifkeit eines Tranistors beim CMOS-Inverter bestimmen und im Shichman-Hodges-Modell nicht von der angelegten Spannung abhängig sind.
 ~\\
 ~\\
 \section*{Frage 8}
-
+Bei der Dimensionierung der Transistoren in einem Gatter gibt es zwei Ziele. Zum einen wird versucht die VTC möglichst nah an einem festgelegten Referenzinvertres zu haben um so ähnliche Noise-Margins für alle Eingänge zu erreichen. Auf der anderen Seite wird versucht die Schaltzeit und somit die Kapazität am Ausgang möglichst minimal zu halten. Hierdurch verscuht man die beste Pfadlaufzeit zu erhalten.
 ~\\
 ~\\
 \section*{Frage 9}
-
+Komplexgatter sind eine Erweiterung von NAND beziehungsweise NOR-Gattern als allgmeinen Fall des Pullup/Pulldown-Netzwerk-Konzepts.\\
+Das Bildungsgesetz ergibt sich aus den Einschränkungen des Schaltungskonzepts. Das Bildungsgesetz besagt eine Baumstruktur bestehend aus Folgen von abwechselnden AND bzw. ODER-Verknüpfung mit einer Inversion am Ausgang.\\
+Praktisch ist jedoch die Komplexität durch elektrische Dimensionierungsprobleme (in den vorhergehenden Fragen beschrieben) beschränkt, was dazu führt dass Komplexgatter nur mit bis zu fünf Eingängen verwendet werden.
 ~\\
 ~\\
 \end{document}
