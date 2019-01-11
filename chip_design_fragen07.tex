@@ -112,23 +112,28 @@
 	
 
 \section*{Frage 1}
-
+Durch anpassen der Transistorweiten $w_n$ und $w_p$.
 ~\\
 ~\\
 \section*{Frage 2}
-
+Es ist zu beachten, dass es nicht sinnvoll ist zu viele Transistoren in Reihe zu schalten. Da der Widerstand und die Kapazität der Gesamtschaltung bei in Serie geschalteten Tranistoren hoch wird. Da desweiteren die Schaltzeit proportional zum Produkt $RC$ ist steigt diese etwa quadratisch zunehmen. Hierdurch wird die Anzahl an in Serie geschaltenen Transistoren praktisch auf drei bis fünf Stück je Logikzelle beschränkt.
 ~\\
 ~\\
 \section*{Frage 3}
-
+Im naiven Ansatz die Weite der in Serie geschalteten Transistoren mit ihrer Anzahl multiplizieren.\\
+Sinnvoller jedoch die Weiten der einzelnen Transistoren individuell optimieren um eine symmetrische VTC zu erhalten.\\
+Am Beispiel eines NAND-Gatters mit drei Eingängen ist gut zu erkennen, dass die Weiten der n-MOS Transistoren, die potentialmäßig weiter von ihrem Substrat liegen, größer sind um den Substratvorspannungseffekt entgegenzuwirken.
 ~\\
 ~\\
 \section*{Frage 4}
-
+Da bei in Serie geschaltenen Transistoren der Gesamtwiderstand und die Gesamtkapazität steigt, bei parallel geschaltenen Transistoren jedoch nur die Gesamtkapazität steigt, macht es Sinn die elektrisch günstigeren Transistoren in Serie zu schalten.\\
+Da bei N-MOSFETS die Beweglichkeit der Majoritätsträger um einen Faktor von zwei bis vier höher ist als bei P-MOSFETS, ist es günstiger N-MOSFETS in Serie zu schalten.\\
+Aus diesem grund sind NAND-Gatter elektrisch günstiger. Bei NAND-Gattern sind die N-MOSFETS in Serie geschalten und die P-MOSFETS parallel. Bei NOR-Gattern hingegen sind die N-MOSFETS parallel geschalten und die P-MOSFETS in Serie.
 ~\\
 ~\\
 \section*{Frage 5}
-
+%TODO: Eingänge != Logikzellen !?!?!??!?!
+Nein. Wie aus Frage zwei zu entnehmen beschränkt man sich auf drei bis fünf Logikzellen, da mit steigender Anzahl an Logikzellen (n), die Schaltzeit etwa quadratisch zu n steigt und der Gesamtwiderstand sowie die Gesamtkapazität sehr hoch wird.
 ~\\
 ~\\
 \section*{Frage 6}
