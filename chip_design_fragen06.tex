@@ -138,7 +138,18 @@ Nein, da das Pull-Up Netz gegen die Versorgungsspannung geschalten ist und N-MOS
 ~\\
 ~\\
 \section*{Frage 7}
-
+Wahrscheinlichkeit dass IC funktioniert:
+$$(1-0,001)^{10} \cdot (1-0.01)^{10} \approx 0,8954 = 89,54 \% $$
+Für $Y \overset{!}{=} 95 \%$:
+\begin{align*}
+	&0,95 \overset{!}{=} (1-0,001)^{10} \cdot (1-x)^{10}\\
+	&\Leftrightarrow \sqrt[10]{\frac{0,95}{(1-0,001)^{10}}} = \sqrt[10]{(1-x)^{10}}\\
+	&\Leftrightarrow \frac{\sqrt[10]{0,95}}{1-(0,001)} = 1 -x\\
+	&\Leftrightarrow x = 1 - \frac{\sqrt[10]{0,95}}{1-(0,001)}\\
+	& \Leftrightarrow x = 0,00412\\
+\end{align*}
+$\Rightarrow$ Für eine Ausbeute von $95 \%$ müsste die Wahrscheinlichkeit dass ein p-Mos Transistor ausfällt $0,00412$ sein.\\
+$(1-0,001)^{10} \cdot (1-0.00412)^{10} \approx 0,9500 = 95,00 \% $
 ~\\
 ~\\
 \section*{Frage 8}
