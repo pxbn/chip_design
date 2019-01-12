@@ -131,15 +131,17 @@ Entweder durch anpassen des Verhältnis der Dimensionierung der P-MOS und N-MOS 
 ~\\
 ~\\
 \section*{Frage 4}
-
+Als Miller-Kapazität bezeichnet man die Gate-Drain-Kapazitäten eines Verstärkers, also die Kapazitäten die vom Ausgang auf den Eingang des Verstärkers zurückführen. Diese erscheinen um den Betrag der Verstärkung größer.\\
+Dieser Effekt ist meist unerwünscht, da er den Einsatz der Emitter- bzw. Sourceschaltungen auf niedrige bis mittlere Frequenzen beschränkt.
 ~\\
 ~\\
 \section*{Frage 5}
-
+Die SWITCH-LEVEL-Simulation wird zur vereinfachten Bestimmung der Schaltzeit verwendet. Dabei wird jeder Transistor als Schalter mit den jeweils entsprechenden Widerständenin Serie dargestellt. Der genau Betrag der Widerstände wird beispielsweiße über eine genaue Simulation festgelegt. Die Schalter schalten dann, wenn die steuernde Spannung die Schwellspannung des Invertres durchläuft.\\
+Probleme beim SWITCH-LEVEL-Modell und -Simulation sind, dass der Querstrom durch das Gatter von der Versorgungsspannung zur Masse, sowie die Nichtlineariät der Transistoren. unbrücksichtig sind.
 ~\\
 ~\\
 \section*{Frage 6}
-
+Bei der TRANSISTOR-LEVEL-Simulation wird eine genaue Simulation durch Lösen der nichtlinearen gewöhnlichen Differntialgelichungen die die Transistoren beschreiben durchgeführt.
 ~\\
 ~\\
 \section*{Frage 7}
@@ -147,15 +149,18 @@ Entweder durch anpassen des Verhältnis der Dimensionierung der P-MOS und N-MOS 
 ~\\
 ~\\
 \section*{Frage 8}
-
+Durch Inverterkaskaden können Treiber für hohe Lastkapazitäten entworfen werden. Beim Entwurf von Inverterkaskaden um hohe Lastkapazitäten zu betreiben ergeben sich zwei Frage. Zum einen wie viele Stufen sind einzubauen sodass man sich am Laufzeit-Optimum befindet und zum anderen wie die jeweiligen Transistoren in den Stufen zu dimensionieren sind.\\
+Um die Laufzeit zu optimieren kann die Formel $t_{pges} = n \cdot A + B \cdot \sum_{i=1}^n \alpha_i$ mit $A = \frac{V_{dd} \cdot K_a}{K_t}$, $B = \frac{V_{dd} \cdot K_e}{Kt}$ und $\alpha_i = \frac{w_{i+1}}{w_i}$ verwendet werden.\\
+Um dann die optimale Inverter-Anzahl $n$ zu bestimmen wird in $t_{pges} = n \cdot A + B \cdot (\frac{W_{n+1}}{W_0})^{\frac{1}{n+1}} $ das minimum gesucht.
+Bei beiden Vorgängen wird die Lastkapazität durch die Weite $w_{n+1}$ dargestellt (also $\alpha = (\frac{W_{n+1}}{W_0})^{\frac{1}{n+1}}$).
 ~\\
 ~\\
 \section*{Frage 9}
-
+Da es alle Gatter für unterschiedliche Treiberfähigkeiten in verschiedenen Ausführungen gibt.
 ~\\
 ~\\
 \section*{Frage 10}
-
+Durch verringern der Versorgungsspannung erhöht sich die Verzögerungszeit (durch halbeieren der Versorgungsspannung ca eine Verdopplung der Verzögerungszeit siehe Folie 8-31).
 ~\\
 ~\\
 \section*{Frage 11}
