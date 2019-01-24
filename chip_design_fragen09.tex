@@ -130,14 +130,13 @@ Nachteile sind zum einen, dass TG langsamer als CMOS Gatter sind und daraus folg
 ~\\
 ~\\
 \section*{Frage 5}
-%TODO weiss nicht ob das stimmt 
-Der On-Leitwert steigt mit zunehmender Spannung, ist jedoch nicht konstant. Werden hingegen sowohl p- als auch n-mos verwendet, ist der Leitwert konstant.\\
-Das bedeutet also für eine reine p-mos Konstruktion verzeichnen wir zwar bessere Leitwerte bei hoher Spannung, als wenn wir eine Kombination benutzen, bei niedriger Spannung ist der Leitwert allerdings geringer.
+Der On-Leitwert sinkt mit Zunehmener Spannung, damit folgt auch dass der On-Widerstand mit zunehmender Spannung Steigt. Der Nachteil ist offensichtlich, dass ein TG nur mit N-MOS Transistor nicht in höheren Spannungsbereichen betrieben werden kann. Auf der anderen seite ist der Vorteil, dass wenn die Schaltung sich sowieso nur in niedrigen Spannungsbereichen befindet, wir ein Transistor sparen können.
 ~\\
 ~\\
 \section*{Frage 6}
-Die Gestaltung  der Modellierung der Gatterlaufzeit ist bei TGs wesentlich komplizierter. Herkömmliche Platzierungs- und Verbindungsverfahren können hierbei nicht mehr genutzt werden.\\
-Um also ein TG als Standartzelle zu nutzen muss man die Lastkapazität von $C_e$ entkoppeln. Dies kann man erreichen indem $C_{par}$ getrennt von der Lastkapazität erdet und einen Inverter zwischen die beiden schält.
+Die Gestaltung  der Modellierung der Gatterlaufzeit ist bei TGs wesentlich komplizierter. Herkömmliche Platzierungs- und Verbindungsverfahren können hierbei nicht mehr genutzt werden wenn das Treiben der Last durch ein TG an eine andere Zelle "weitergereicht" wird.\\
+\\
+Deshalb muss die Lastkapazität durch ein Gatter am Ausgang der TG-Standartzelle abgetrennt werden. So erhält man zum einen die parasitäre Kapazität der TG-Zelle und zum anderen hinter dem bspw. Inverter die Lastkapazität.
 ~\\
 ~\\
 \section*{Frage 7}
