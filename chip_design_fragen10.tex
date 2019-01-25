@@ -1,0 +1,172 @@
+ % ----------------------- TODO ---------------------------
+%Template 
+\documentclass[a4paper]{scrartcl}
+\usepackage[utf8]{inputenc}
+%\usepackage[ngerman]{babel}
+\usepackage{geometry,forloop,fancyhdr,fancybox,lastpage}
+\usepackage{listings}
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+\geometry{a4paper,left=3cm, right=3cm, top=3cm, bottom=3cm}
+% Diese Daten müssen pro Blatt angepasst werden:
+\newcommand{\NUMBER}{1}
+\newcommand{\EXERCISES}{12}
+% Diese Daten müssen einmalig pro Vorlesung angepasst werden:
+\newcommand{\COURSE}{Chip Design}
+%\newcommand{\TUTOR}{Benjamin Coban}
+\newcommand{\STUDENTA}{Stefan Wezel}
+\newcommand{\STUDENTB}{Lukas Günthner}
+%\newcommand{\STUDENTC}{Gwent Krause}
+\newcommand{\DEADLINE}{\date}
+% ----------------------- TODO ---------------------------
+
+
+
+%Math
+\usepackage{amsmath,amssymb,tabularx}
+
+%Figures
+\usepackage{graphicx,tikz,color,float}
+\graphicspath{ {home/stefan/picures/} }
+\usetikzlibrary{shapes,trees}
+
+%Algorithms
+\usepackage[ruled,linesnumbered]{algorithm2e}
+
+%Kopf- und Fußzeile
+\pagestyle {fancy}
+%\fancyhead[L]{Tutor: \TUTOR}
+\fancyhead[C]{\COURSE}
+\fancyhead[R]{\today}
+
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{Seite \thepage}
+
+%Formatierung der Überschrift, hier nichts ändern
+\def\header#1#2{
+	\begin{center}
+		{\Large\bf Übungsblatt #1}\\
+		{(Abgabetermin #2)}
+	\end{center}
+}
+
+%Definition der Punktetabelle, hier nichts ändern
+\newcounter{punktelistectr}
+\newcounter{punkte}
+\newcommand{\punkteliste}[2]{%
+	\setcounter{punkte}{#2}%
+	\addtocounter{punkte}{-#1}%
+	\stepcounter{punkte}%<-- also punkte = m-n+1 = Anzahl Spalten[1]
+	\begin{center}%
+		\begin{tabularx}{\linewidth}[]{@{}*{\thepunkte}{>{\centering\arraybackslash} X|}@{}>{\centering\arraybackslash}X}
+			\forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+			{%
+				\thepunktelistectr &
+			}
+			#2 &  $\Sigma$ \\
+			\hline
+			\forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+			{%
+				&
+			} &\\
+			\forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+			{%
+				&
+			} &\\
+		\end{tabularx}
+	\end{center}
+}
+
+\begin{document}
+	
+	\begin{tabularx}{\linewidth}{m{0.2 \linewidth}X}
+		\begin{minipage}{\linewidth}
+			\STUDENTA\\
+			\STUDENTB\\
+			%\STUDENTC
+		\end{minipage} & \begin{minipage}{\linewidth}
+			\punkteliste{1}{\EXERCISES}
+		\end{minipage}\\
+	\end{tabularx}
+	
+	%\header{Nr. \NUMBER}{\DEADLINE}
+	
+	% ----------------------- TODO ---------------------------
+	% Hier werden die Aufgaben/Lösungen eingetragen:
+	
+	
+
+\section*{Frage 1}
+\begin{itemize}
+	\item Mechanisch (Kilometerzähler)
+	\item Gefüge-Umwandlung von Materialien
+	\item Elektromechanisch (Kippschalter)
+	\item Akustisch (Schall-Laufzeitleitung)
+	\item Elektrisch (Laufzeitleitung)
+	\item Optisch (CD)
+	\item Magnetisch (Festplatte)
+	\item Elektrostatisch (DRAM, EPROM)
+	\item Elektronisch (Latches)
+\end{itemize}
+~\\
+~\\
+\section*{Frage 2}
+Zwei stabile Zustände (Ausgang High oder Low) und ein metastabilen Zustand der sich nach $t_{meta}$ wieder auf einen der zwei stabilen Zustände einpendeld, man kann jedoch nicht sagen auf welchen.
+~\\
+~\\
+\section*{Frage 3}
+Wenn die Kippstufe sich im metastabilen Zustand befindet benötigt sie Zeit um sich wieder in einen Stabilen Zustand einzupendeln, man kann jedoch nicht vorhersagen in welchen Zustand. Hierdurch können dann Folgefehler in den an diese Kippstufe angeschlossenen Schaltungen auftreten, da am Ausgang der Kippstufe kein gültiger Logikpegel vorliegt.
+~\\
+~\\
+\section*{Frage 4}
+Ein Master-Slave FlipFlop als ganzer Baustein kann nicht Transparent sein. Entweder das Master oder das Slave Latch sind Transparent. Ein normales Latch kann Transparent sein wenn das Steuersignal High ist (oder umgekehrt falls das Latch mit $C=0$ Eingangssignale übernimmt).
+~\\
+~\\
+\section*{Frage 5}
+
+~\\
+~\\
+\section*{Frage 6}
+Da der Takt auf der Taktleitung auch eine gewisse Laufzeit. Dies führt dazu, dass das Taktsignal nicht gleichzeitig an jedem Punkt in der Schaltung ankommt und es so zu unverhersehbaren Verhalten kommen kann. Ist die Laufzeitverzögerung beispielsweise genau so lange, dass ein MS-FF seine Eingänge Abtastet, sich die Eingangssignale in diesem moment jedoch gerade ändern, würde das MS-FF auch in einen metastabilen Zustand fallen (Folie 10-43).
+~\\
+~\\
+\section*{Frage 7}
+
+~\\
+~\\
+\section*{Frage 8}
+
+~\\
+~\\
+\section*{Frage 9}
+
+~\\
+~\\
+\section*{Frage 10}
+Da bei dieser Eingangsbelegung das RS-Latch in einen Zustand geht, bei dem es wenn beide Eingangssignale "gleichzeitig" auf Low gehen in einen Metastabilen Zustand gerät. Nach Ablauf der Zeit $t_{meta}$ ist dann nicht vorherzusagen in welchen Zustand sich das Latch einpendelt.
+~\\
+~\\
+\section*{Frage 11}
+
+~\\
+~\\
+\section*{Frage 12}
+Da Master-Slave FlipFlops Taktflankengesteuert sind und Latches "maximal" Taktzustandgesteuert. Durch die Taktflankensteuerung werden viele Probleme umgangen. Es ist hierdurch möglich den gegenwärtigen Zustand des FF und den nächsten Zustand eklektisch und zeitlich sauber zu unterscheiden. So wir das Einhalten aller Laufzeitbedinungen stark vereinfacht. Es kann beispielsweiße gewartet werden bis das Schaltnez alle Operationen (umaldungen) vorgenommen hat um dann den Ausgangsvektor des Schaltnetzes abzuspeichern und dann erst wieder diese Ausgaben über eine Rückkopplung ins Schaltnetz weiterzugeben.
+~\\
+~\\
+\end{document}
