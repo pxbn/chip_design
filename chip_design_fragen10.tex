@@ -138,7 +138,12 @@ Ein Master-Slave FlipFlop als ganzer Baustein kann nicht Transparent sein. Entwe
 ~\\
 ~\\
 \section*{Frage 5}
-
+Angenommen die Clockflanke kommt bei beiden FF gleichzeitig an sind folgende Zeitbedinungen einzuhalten.\\
+\begin{itemize}
+	\item $t_{od} > t_{h}$
+	\item $t_{od} + t_{psn} + t_{su} < T_{clk}$
+\end{itemize}
+Das bedeutet, die output-delay Zeit des Master-FF muss größer sein als die Hold-Zeit des Slave FF. Desweiteren müssen die output-delay Zeit des Master-FF plus die setup Zeit des Slave-FF kleiner als die Taktfrequenz sein.
 ~\\
 ~\\
 \section*{Frage 6}
@@ -146,15 +151,19 @@ Da der Takt auf der Taktleitung auch eine gewisse Laufzeit. Dies führt dazu, da
 ~\\
 ~\\
 \section*{Frage 7}
-
+Clock Skew oder auch Taktversatz beschreibt die Zeitdifferenz zwischen Eintreffen der Taktflanke am ersten zu Betrachtenden Schaltungselement und dem Eintreffen der selben Taktflanke an dem zweiten zu Betrachteneden Schaltungselement.\\
+Dies kann zu verschiednen Problemen führen, zum einen Beispielsweiße, dass die Taktflanke die setup oder hold time eines Flipflops verletzt und der Flipflop so in einen metastabilen Zustand gerät. Ein weiteres Problem kann sein, dass es zu einer verschiebung um eine Taktperiode kommt was in Schaltwerken zu verschiednen Problemen führen kann, wie ungültige Zustände des Schaltwerks zu bestimmten Taktperioden und weiteren folgeproblemen.
 ~\\
 ~\\
 \section*{Frage 8}
-
+Die maximale Togglefrequenz eines FF steht für die Takfrequenz in der es das FF gerade noch schafft sein Zustand zu wechseln.\\
+Berechnen kann man diese mit $f_{clkmax} = \frac{1}{T_{clkmin}} \text{, mit }T_{clkmin} = t_{od} + t_{su}$.\\
+Im Endeffekt bedeutet dies, dass die Taktfrequenz nicht kleiner sein darf als die Summe von setup und outpu-delay Zeit (da $t_{h} < t_{od}$ ist $t_h$ hier zu vernachlässigen). 
 ~\\
 ~\\
 \section*{Frage 9}
-
+In der Simulation am Beispiel eines D-FF, wird der Zeitpunkt des Signalwechsels $t_d$ über den Zeitpunkt der Clockflanke hinweggeschoben und hierzu die output-delay Zeit $t_{od}$ bestimmt.\\
+Es gibt dann einen Bereich indem die $t_{od}$ stark ansteigt, die setup-time ist dann genau die Zeit an der $t_{od}$ um (nach Befinition) um bspw. 5\% steigt (siehe Folie 10-47).
 ~\\
 ~\\
 \section*{Frage 10}
@@ -162,7 +171,7 @@ Da bei dieser Eingangsbelegung das RS-Latch in einen Zustand geht, bei dem es we
 ~\\
 ~\\
 \section*{Frage 11}
-
+Für das RS-Latch wird die Mindestdauer für einen Setz- bzw Rücksetzimpuls festgelegt, um sicherzustellen dass der vorhergehende Zustandsübergang der Kippstufe vollständig beendet ist, um nicht in einen metastabilen Zustand zu geraten.
 ~\\
 ~\\
 \section*{Frage 12}
