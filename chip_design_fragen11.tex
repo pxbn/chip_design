@@ -128,7 +128,7 @@ FF mit asynchronem Reset werden Beispielweiße bei Power-On-Reset Schaltungen ve
 ~\\
 ~\\
 \section*{Frage 5}
-
+Die Power-On-Schatung initalisiert das Schaltwerk in einen definierten Startzustand. Sobald beim ansteigen der $V_{dd}$ die minimale $V_{dd}$ für den POR erreicht ist wird er taktasynchron aktiv, zu dieser Zeit ist das Taktsignal noch instabil und der POR zieht das Taktzignal bspw. auf $0V$. Sobald das Taktsignal stabil und die $V_{dd}$ stabil sind, wird der PORT taktsynchron inaktiv und die Schaltung beginnt mit dem stabilen Takt.
 ~\\
 ~\\
 \section*{Frage 6}
@@ -136,11 +136,15 @@ FF mit asynchronem Reset werden Beispielweiße bei Power-On-Reset Schaltungen ve
 ~\\
 ~\\
 \section*{Frage 7}
-
+Da durch das Zeitverhalten der Takt über das Taktverteilungssystem zu verschiedenen tatsächlichen Zeitpunkten an verschiedenen Punkten in der Schaltung ankommen kann. Dies kann zu berechnungsfehler führen wenn bspw. zwei Gatter in verschiedenen Taktzyklen arbeiten.
 ~\\
 ~\\
 \section*{Frage 8}
-
+\begin{itemize}
+	\item Die abtastende Taktflanke muss an allen FFs gleichzeitig eintreffen.
+	\item Die zeitlichen Interveralle zwischen Taktflanken müssen ausreichen sodass das Schaltnetz genug Zeit hat sich auf die tatsächliche Ausgangssignale einschingen kann.
+	\item Die Signale am Eingang der FFs müssen um den Abtastzeitpunkt stabile und gültige Logikpegel sein.
+\end{itemize}
 ~\\
 ~\\
 \section*{Frage 9}
@@ -152,7 +156,7 @@ FF mit asynchronem Reset werden Beispielweiße bei Power-On-Reset Schaltungen ve
 ~\\
 ~\\
 \section*{Frage 11}
-
+Ein kritischer Pfad ist ein Pfad im Schaltnetz, der kaum noch oder keine Laufzeit-Reserver mehr hat.
 ~\\
 ~\\
 \section*{Frage 12}
@@ -160,7 +164,7 @@ FF mit asynchronem Reset werden Beispielweiße bei Power-On-Reset Schaltungen ve
 ~\\
 ~\\
 \section*{Frage 13}
-
+Es ist zu beachten, dass der Bus an den die Tri-State Treiber angeschlossen sind immer ein definierter Logikzustand anliegt, das heißt dass entweder durch ein TG zur Bus-Definition der Bus einen definierten und gültigen Logikzustand hat, oder dass immer genau ein Tri-State Treiber ein gültiges Signal auf den Bus schält.
 ~\\
 ~\\
 \section*{Frage 14}
@@ -168,7 +172,8 @@ FF mit asynchronem Reset werden Beispielweiße bei Power-On-Reset Schaltungen ve
 ~\\
 ~\\
 \section*{Frage 15}
-
+Da ein TG nicht verstärkt und nicht entkoppelt, können Latches vor dem TG durch die Lastkapazität "rückwärts" beeinflusst werden.\\
+Dies kann bspw. bei Bus-Treiber problematisch werden. Wenn das Ausgangssignal eines Latches high ist und durch ein TG auf den Bus geschaltet wird, erhöht sich die Ausgangskapazität um die Kapazität des Busses. Nun kann es passieren, dass die High-Ausgangsspannung nicht genügt um die neue große Kapazität auf High umzuladen und so der Ausgang als Low-Pegel interpretiert wird und das Latch über die Rückkopplung umgeworfen wird.
 ~\\
 ~\\
 \section*{Frage 16}
