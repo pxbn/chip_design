@@ -132,7 +132,7 @@ Die Power-On-Schatung initalisiert das Schaltwerk in einen definierten Startzust
 ~\\
 ~\\
 \section*{Frage 6}
-
+Im asynchronen Schaltwerk wird der Zustand praktisch "auf der Leitung" mit zusätzlichen Rückkopplungen gespeichert, hier ist es extrem wichtig auf die Laufzeitbedinungen zu achten! Es gibt keinen Zustands-Speicher mit Latches.
 ~\\
 ~\\
 \section*{Frage 7}
@@ -152,7 +152,11 @@ Da durch das Zeitverhalten der Takt über das Taktverteilungssystem zu verschied
 ~\\
 ~\\
 \section*{Frage 10}
-
+STA ist die statische Laufzeitanalyse. Es werden alle Pfade im Schaltnetz berücksichtigt, auch logisch nicht schaltbare Pfade. Es wird unter Verwendung der beschriebenen Laufzeitmodelle für die entsprechenden Zellen, die Laufzeit für jeden Pfad für sowhol steigende als auch für die fallende Taktflanke berechnet. Hierfür wird auch die zu treibende Kapazität für jedes Gatter benötigt, diese ergibt sich aus der Summe der Eingangskapazitäten aller folgenden Gatter auf dem Pfad plus die Kapazität der Verbindungsleitungen.\\
+Als Pfadlauzeit wird dann aus der Laufzeit für die steigende und fallende Taktflanke die größere ausgewählt.\\
+Da die STA vor dem Layout durchgeführt wird, wählt man ein Schätzverfahren für die Verdrahtungskapazitäten. Nach der Layout erzeugung muss die STA wiederholt werden.\\
+Es kann zu mehreren Iterationen der STA kommen, da bei einer Änderung auf einem Pfad, die Laufzeit für alle beeinflussten Pfaden neu berechnet werden muss und sich hierdurch wieder andere Pfade zu kritischen Pfaden werden können.\\
+Als weiteres Modell der STA gibt es die Statistical Static Timing Analysis, bei der die STA mit statistischen Methoden erweitert wird. So soll die Intra-Chip-Streuung der Laufzeiten der einzelnen Gatter besser erfasst werden.\\
 ~\\
 ~\\
 \section*{Frage 11}
