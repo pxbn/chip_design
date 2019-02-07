@@ -164,7 +164,13 @@ Ein kritischer Pfad ist ein Pfad im Schaltnetz, der kaum noch oder keine Laufzei
 ~\\
 ~\\
 \section*{Frage 12}
-
+Ein Logik-Simulator muss mindestens vier Werte darstellen können, da auch Bustreiber simuliert werden müssen.\\
+Es werden deshalb folgende Werte eines Signals simulierbar sein:
+\begin{itemize}
+	\item 0 und 1
+	\item X für ein unbestimmten, da nicht initialisiert oder nicht berechnet oder unbekannt, da nicht berechenbar bspw. ein kurzschluss im Bustreiber
+	\item Z als high impedance  beim Bustreiber
+\end{itemize}
 ~\\
 ~\\
 \section*{Frage 13}
