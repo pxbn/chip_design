@@ -190,7 +190,10 @@ Dies kann bspw. bei Bus-Treiber problematisch werden. Wenn das Ausgangssignal ei
 ~\\
 ~\\
 \section*{Frage 16}
-
+Das Synchronisationsproblem tritt auf webb asynchrone Signale in einem synchronen Schaltwerk verwendet werden, bswp. externe Signale wie ein Knopfdruck oder Signale aus einem anderen synchronen Schaltwerk wobei jedoch die Taktraten beider Schaltwerke unterschiedlich sind. Es kann deshalb vorkommen, dass das asynchrone Signal genau dann kommt wenn ein Latch in der setup oder hold time ist und dieses somit in ein metastabilen Zustand versetzen.\\
+Die Idee zur Lösung mit der "Two-Flop" Schaltung ist, dass man zwei D-FF hintereinander schält. Das erste FF kann mit einer gewissen Wahrscheinlichkeit metastabil werden, das zweite FF wird jedoch nur metastabil wenn sich das erste FF innerhalb einer Taktperiode nicht erhohlt hat. Demnach ist die Wahrscheinlichkeit dass der Ausgang nach beiden FF metastabil ist wesentlich geringer.\\
+Es ist wichtig zu beachten, dass für Busse Datenleitungen nicht einzeln synchronisert werden, da es so vorkommen kann, dass teile des Datenwortes erst im nächsten Takt übertragen werden. Deshalb muss man hier mit Steuersignalen arbeiten die synchronisiert werden und dann die Daten gemeinsam mittels eines Handshake-Verfahrens übernommen werden.\\
+Da die Taktrate minus die output-delay und setup Zeit des FF die verfügbare Erholungszeit für das erste FlipFlop angibt und man so die Wahrscheinlichkeit berechnen kann, dass das asynchrone Signal in ein Zeitfenster fällt, indem der erste FF nicht genug Zeit hat sich aus dem metastabilen Zustand zu erhohlen.
 ~\\
 ~\\
 
